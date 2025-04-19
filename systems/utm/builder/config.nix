@@ -1,4 +1,4 @@
-{ pkgs, adrianSSHKey, rootSSHKey, ... }:
+{ pkgs, luisschubertSSHKey, rootSSHKey, ... }:
 
 {
   networking.hostName = "builder";
@@ -8,12 +8,14 @@
     auto-optimise-store = true;
   };
 
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.git
-    pkgs.zip
-    pkgs.unzip
-    pkgs.wget
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    zip
+    unzip
+    wget
+    curl
+    htop
   ];
 
   fileSystems."/" = {
@@ -31,10 +33,10 @@
   ];
 
   documentation.nixos.enable = false;
-  time.timeZone = "Europe/London";
-  i18n.defaultLocale = "en_GB.UTF-8";
+  time.timeZone = "Americas/Los_Angeles";
+  i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
-  nix.settings.trusted-users = [ "adrian" "@wheel" ];
+  nix.settings.trusted-users = [ "luisschubert" "@wheel" ];
   nix.settings.system-features = [ "kvm" "nixos-test" ];
 
   boot = {
@@ -54,11 +56,11 @@
 
   users.users = {
     root.hashedPassword = "!"; # Disable root login
-    adrian = {
+    luisschubert = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       openssh.authorizedKeys.keys = [
-        adrianSSHKey
+        luisschubertSSHKey
         rootSSHKey
       ];
     };

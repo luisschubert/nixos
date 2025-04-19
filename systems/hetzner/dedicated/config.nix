@@ -38,7 +38,7 @@
   mount /dev/disk/by-label/boot /mnt/boot
 
   # Install.
-  sudo nixos-install --flake github:a-h/nixos#hetzner-dedicated-x86_64
+  sudo nixos-install --flake github:luisschubert/nixos#hetzner-dedicated-x86_64
 
 */
 { system, inputs, pkgs, config, adrianSSHKey, rootSSHKey, ... }:

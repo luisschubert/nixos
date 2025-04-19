@@ -7,19 +7,19 @@ If you're making a lot of changes, skip the cache by adding the `--refresh` flag
 ### hetzner-dedicated-x86_64-switch
 
 ```bash
-sudo nixos-rebuild switch --flake github:a-h/nixos#hetzner-dedicated-x86_64 --refresh
+sudo nixos-rebuild switch --flake github:luisschubert/nixos#hetzner-dedicated-x86_64 --refresh
 ```
 
 ### hetzner-builder-x86_64-switch
 
 ```bash
-sudo nixos-rebuild switch --flake github:a-h/nixos#hetzner-builder-x86_64 --refresh
+sudo nixos-rebuild switch --flake github:luisschubert/nixos#hetzner-builder-x86_64 --refresh
 ```
 
 ### nixos-switch-aarch64
 
 ```
-sudo nixos-rebuild switch --flake github:a-h/nixos#builder-aarch64
+sudo nixos-rebuild switch --flake github:luisschubert/nixos#builder-aarch64
 ```
 
 ### nixos-switch-aarch64-local

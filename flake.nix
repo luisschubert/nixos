@@ -6,8 +6,8 @@
 
   outputs = { nixpkgs, nix, ... }@inputs:
     let
-      adrianSSHKey = ''ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4ZYYVVw4dsNtzOnBCTXbjuRqOowMOvP3zetYXeE5i+2Strt1K4vAw37nrIwx3JsSghxq1Qrg9ra0aFJbwtaN3119RR0TaHpatc6TJCtwuXwkIGtwHf0/HTt6AH8WOt7RFCNbH3FuoJ1oOqx6LZOqdhUjAlWRDv6XH9aTnsEk8zf+1m30SQrG8Vcclj1CTFMAa+o6BgGdHoextOhGMlTx8ESAlgIXCo+dIVjANE2qbfAg0XL0+BpwlRDJt5OcgzrILXZ1jSIYRW4eg/JBcDW/WqorEummxhB26Y6R0jeswRF3DOQhU2fAhbsCWdairLam42rFGlKfWyTbgjRXl/BNR'';
-      rootSSHKey = ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjt4N/HZ+dOEJ62OunmT0ZF2SqsT96iUdfSi6ZP83wt root@adrian.local'';
+      luisschubertSSHKey = ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJSeW7tmXlahQBFhP+GmwhgY1ZlhsSK9iMSAZA6PbBBg schubert.luis@gmail.com'';
+      rootSSHKey = ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJSeW7tmXlahQBFhP+GmwhgY1ZlhsSK9iMSAZA6PbBBg schubert.luis@gmail.com'';
       allSystems = [
         "x86_64-linux" # 64-bit Intel/AMD Linux
         "aarch64-linux" # 64-bit ARM Linux
@@ -34,7 +34,7 @@
         hetzner-builder-x86_64 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
-            adrianSSHKey = adrianSSHKey;
+            luisschubertSSHKey = luisschubertSSHKey;
             rootSSHKey = rootSSHKey;
           };
           modules = [
@@ -48,7 +48,7 @@
           system = "x86_64-linux";
           specialArgs = {
             system = "x86_64-linux";
-            adrianSSHKey = adrianSSHKey;
+            luisschubertSSHKey = luisschubertSSHKey;
             rootSSHKey = rootSSHKey;
             inputs = inputs;
           };
@@ -61,7 +61,7 @@
         builder-x86_64 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
-            adrianSSHKey = adrianSSHKey;
+            luisschubertSSHKey = luisschubertSSHKey;
             rootSSHKey = rootSSHKey;
           };
           modules = [
@@ -71,7 +71,7 @@
         builder-aarch64 = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           specialArgs = {
-            adrianSSHKey = adrianSSHKey;
+            luisschubertSSHKey = luisschubertSSHKey;
             rootSSHKey = rootSSHKey;
           };
           modules = [
